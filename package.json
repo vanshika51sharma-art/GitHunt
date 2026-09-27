@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "GitHunt — X Marks the Bug | AI Code-Review Treasure Hunt Platform",
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
