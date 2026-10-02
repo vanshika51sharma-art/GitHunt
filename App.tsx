@@ -17,23 +17,23 @@ import {
   selectCandidateFiles, 
   buildPresetTree, 
   getLanguageFromExtension 
-} from './services/githubService';
-import { generateTreasureClue } from './services/geminiService';
-import { calculateSonarState, calculateGameScore } from './utils/sonarRadar';
-import { soundEngine } from './utils/soundEngine';
+} from './githubService';
+import { generateTreasureClue } from './geminiService';
+import { calculateSonarState, calculateGameScore } from './sonarRadar';
+import { soundEngine } from './soundEngine';
 
-import { Navbar } from './components/Navbar';
-import { LandingHero } from './components/LandingHero';
-import { VoyageLoading } from './components/VoyageLoading';
-import { SonarRadar } from './components/SonarRadar';
-import { IslandMap } from './components/IslandMap';
-import { CodeArena } from './components/CodeArena';
-import { ParrotCoPilot } from './components/ParrotCoPilot';
-import { SkillScroll } from './components/SkillScroll';
-import { ShareableFlexCard } from './components/ShareableFlexCard';
-import { CaptainLog } from './components/CaptainLog';
-import { LeaderboardModal } from './components/LeaderboardModal';
-import { SettingsModal } from './components/SettingsModal';
+import { Navbar } from './Navbar';
+import { LandingHero } from './LandingHero';
+import { VoyageLoading } from './VoyageLoading';
+import { SonarRadar } from './SonarRadar';
+import { IslandMap } from './IslandMap';
+import { CodeArena } from './CodeArena';
+import { ParrotCoPilot } from './ParrotCoPilot';
+import { SkillScroll } from './SkillScroll';
+import { ShareableFlexCard } from './ShareableFlexCard';
+import { CaptainLog } from './CaptainLog';
+import { LeaderboardModal } from './LeaderboardModal';
+import { SettingsModal } from './SettingsModal';
 
 export const App: React.FC = () => {
   // Theme State: 'dark' | 'light'
