@@ -17,23 +17,23 @@ import {
   selectCandidateFiles, 
   buildPresetTree, 
   getLanguageFromExtension 
-} from './githubService';
-import { generateTreasureClue } from './geminiService';
-import { calculateSonarState, calculateGameScore } from './sonarRadar';
-import { soundEngine } from './soundEngine';
+} from './services/githubService';
+import { generateTreasureClue } from './services/geminiService';
+import { calculateSonarState, calculateGameScore } from './utils/sonarRadar';
+import { soundEngine } from './utils/soundEngine';
 
-import { Navbar } from './Navbar';
-import { LandingHero } from './LandingHero';
-import { VoyageLoading } from './VoyageLoading';
-import { SonarRadar } from './SonarRadar';
-import { IslandMap } from './IslandMap';
-import { CodeArena } from './CodeArena';
-import { ParrotCoPilot } from './ParrotCoPilot';
-import { SkillScroll } from './SkillScroll';
-import { ShareableFlexCard } from './ShareableFlexCard';
-import { CaptainLog } from './CaptainLog';
-import { LeaderboardModal } from './LeaderboardModal';
-import { SettingsModal } from './SettingsModal';
+import { Navbar } from './components/Navbar';
+import { LandingHero } from './components/LandingHero';
+import { VoyageLoading } from './components/VoyageLoading';
+import { SonarRadar } from './components/SonarRadar';
+import { IslandMap } from './components/IslandMap';
+import { CodeArena } from './components/CodeArena';
+import { ParrotCoPilot } from './components/ParrotCoPilot';
+import { SkillScroll } from './components/SkillScroll';
+import { ShareableFlexCard } from './components/ShareableFlexCard';
+import { CaptainLog } from './components/CaptainLog';
+import { LeaderboardModal } from './components/LeaderboardModal';
+import { SettingsModal } from './components/SettingsModal';
 
 export const App: React.FC = () => {
   // Theme State: 'dark' | 'light'
@@ -358,7 +358,7 @@ export const App: React.FC = () => {
 
   return (
     <div className="min-h-screen transition-colors duration-300 flex flex-col selection:bg-amber-500/30 selection:text-amber-400 dark:selection:text-amber-300">
-      
+
       {/* Top Cyber-Pirate Header */}
       <Navbar
         currentRepo={currentRepo}
@@ -375,7 +375,7 @@ export const App: React.FC = () => {
 
       {/* Main Content Area based on Stage */}
       <main className="flex-1 flex flex-col">
-        
+
         {/* 1. Landing Stage */}
         {stage === 'landing' && (
           <LandingHero
@@ -395,10 +395,10 @@ export const App: React.FC = () => {
         {/* 3. The Interactive Hunting Arena */}
         {stage === 'hunting' && treasureTarget && currentRepo && (
           <div className="flex-1 p-3 sm:p-4 lg:p-6 max-w-[1600px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4">
-            
+
             {/* Left Column (4 cols): Sonar Radar HUD + Island Map */}
             <div className="lg:col-span-4 flex flex-col gap-4">
-              
+
               {/* Sonar Radar HUD */}
               <SonarRadar
                 sonarState={sonarState}
